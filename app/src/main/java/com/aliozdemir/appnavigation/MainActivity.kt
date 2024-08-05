@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity() {
 //        getNavControllerViaFragment2()
 //        getNavControllerViaView2() // Error: does not have a NavController set (NavController'a erişim sorunu var demektir).
         // Sadece onCreate()'de çalışmaz. onResume() vb. de çalışır.
+
+//        getNavControllerViaFragment3()
+//        getNavControllerViaView3() // Error: does not have a NavController set (NavController'a erişim sorunu var demektir).
+        // Sadece onCreate()'de çalışmaz. onResume() vb. de çalışır.
     }
 
     fun getNavControllerViaFragment1() {
@@ -35,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
 //        getNavControllerViaView2()
+//        getNavControllerViaView3()
     }
 
     fun getNavControllerViaFragment2() {
@@ -45,5 +50,13 @@ class MainActivity : AppCompatActivity() {
     fun getNavControllerViaView2() {
         val navHostFragmentContainerView = findViewById<View>(R.id.navHostFragmentContainerView)
         val navControllerContainerView = navHostFragmentContainerView.findNavController()
+    }
+
+    fun getNavControllerViaFragment3() {
+        findNavController(R.id.navHostFragmentNotView)
+    }
+
+    fun getNavControllerViaView3() {
+        findNavController(R.id.navHostFragmentContainerView)
     }
 }
