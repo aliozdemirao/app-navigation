@@ -22,9 +22,25 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnOpenProfile = view.findViewById<Button>(R.id.btnOpenProfile)
+        val btnOpenSettingsDialog = view.findViewById<Button>(R.id.btnOpenSettingsDialog)
+        val btnOpenSecondActivity = view.findViewById<Button>(R.id.btnOpenSecondActivity)
+        val btnOpenBottomSheetDialogFragment = view.findViewById<Button>(R.id.btnOpenBottomSheetDialogFragment)
+
         btnOpenProfile.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_profileFragment)
 //            findNavController().navigate(R.id.profileFragment)
+        }
+
+        btnOpenSettingsDialog.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_settingsDialogFragment)
+        }
+
+        btnOpenSecondActivity.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_secondActivity)
+        }
+
+        btnOpenBottomSheetDialogFragment.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_someBottomSheetFragment)
         }
     }
 }

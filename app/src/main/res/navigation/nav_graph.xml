@@ -13,10 +13,34 @@
         <action
             android:id="@+id/action_dashboardFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_settingsDialogFragment"
+            app:destination="@id/settingsDialogFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_secondActivity"
+            app:destination="@id/secondActivity" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_someBottomSheetFragment"
+            app:destination="@id/someBottomSheetFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.aliozdemir.appnavigation.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <dialog
+        android:id="@+id/settingsDialogFragment"
+        android:name="com.aliozdemir.appnavigation.SettingsDialogFragment"
+        android:label="fragment_settings_dialog"
+        tools:layout="@layout/fragment_settings_dialog" />
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="com.aliozdemir.appnavigation.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" />
+    <dialog
+        android:id="@+id/someBottomSheetFragment"
+        android:name="com.aliozdemir.appnavigation.SomeBottomSheetFragment"
+        android:label="fragment_some_bottom_sheet"
+        tools:layout="@layout/fragment_some_bottom_sheet" />
 </navigation>
