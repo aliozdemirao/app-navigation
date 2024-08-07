@@ -39,4 +39,12 @@
         android:textColor="@color/white"
         android:textSize="21sp" />
 
+    <Button
+        android:id="@+id/btnOpenPaymentFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Payment Screen"
+        android:textColor="@color/white"
+        android:textSize="21sp" />
+
 </LinearLayout>

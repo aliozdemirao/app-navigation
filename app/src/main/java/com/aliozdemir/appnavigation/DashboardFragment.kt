@@ -25,6 +25,7 @@ class DashboardFragment : Fragment() {
         val btnOpenSettingsDialog = view.findViewById<Button>(R.id.btnOpenSettingsDialog)
         val btnOpenSecondActivity = view.findViewById<Button>(R.id.btnOpenSecondActivity)
         val btnOpenBottomSheetDialogFragment = view.findViewById<Button>(R.id.btnOpenBottomSheetDialogFragment)
+        val btnOpenPaymentFragment = view.findViewById<Button>(R.id.btnOpenPaymentFragment)
 
         btnOpenProfile.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_profileFragment)
@@ -41,6 +42,10 @@ class DashboardFragment : Fragment() {
 
         btnOpenBottomSheetDialogFragment.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_someBottomSheetFragment)
+        }
+
+        btnOpenPaymentFragment.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_navGraphPayment)
         }
     }
 }

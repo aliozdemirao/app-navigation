@@ -9,7 +9,7 @@
         android:id="@+id/dashboardFragment"
         android:name="com.aliozdemir.appnavigation.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashboardFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_someBottomSheetFragment"
             app:destination="@id/someBottomSheetFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_navGraphPayment"
+            app:destination="@id/nav_graph_payment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -43,4 +46,27 @@
         android:name="com.aliozdemir.appnavigation.SomeBottomSheetFragment"
         android:label="fragment_some_bottom_sheet"
         tools:layout="@layout/fragment_some_bottom_sheet" />
+
+    <navigation
+        android:id="@+id/nav_graph_payment"
+        app:startDestination="@id/paymentFragment">
+
+        <fragment
+            android:id="@+id/paymentFragment"
+            android:name="com.aliozdemir.appnavigation.PaymentFragment"
+            android:label="fragment_payment"
+            tools:layout="@layout/fragment_payment">
+            <action
+                android:id="@+id/action_paymentFragment_to_placeholder"
+                app:destination="@id/placeholder" />
+        </fragment>
+        <fragment android:id="@+id/placeholder">
+            <action
+                android:id="@+id/action_placeholder_to_placeholder2"
+                app:destination="@id/placeholder2" />
+        </fragment>
+        <fragment android:id="@+id/placeholder2"/>
+
+    </navigation>
+
 </navigation>
