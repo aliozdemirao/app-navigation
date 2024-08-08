@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_navGraphPayment"
             app:destination="@id/nav_graph_payment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_navGraphTransfer"
+            app:destination="@id/nav_graph_transfer" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -65,8 +68,10 @@
                 android:id="@+id/action_placeholder_to_placeholder2"
                 app:destination="@id/placeholder2" />
         </fragment>
-        <fragment android:id="@+id/placeholder2"/>
+        <fragment android:id="@+id/placeholder2" />
 
     </navigation>
+
+    <include app:graph="@navigation/nav_graph_transfer" />
 
 </navigation>
