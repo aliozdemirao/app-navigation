@@ -21,6 +21,15 @@ class MainActivity : AppCompatActivity() {
 //        getNavControllerViaFragment3()
 //        getNavControllerViaView3() // Error: does not have a NavController set (NavController'a erişim sorunu var demektir).
         // Sadece onCreate()'de çalışmaz. onResume() vb. de çalışır.
+
+        /*
+        val pendingIntent =
+            NavDeepLinkBuilder(this)
+                .setGraph(R.navigation.nav_graph_transfer) // Açmak istediğimiz graph
+                .setDestination(R.id.currencyFragment) // O graphta direkt açmak istediğimiz ekran
+//                .setArguments(bundleOf()) // argument var ise
+//                .setComponentName(DestinationActivity::class.java) // NavHost başka bir activity üzerinde ise
+                .createPendingIntent() // pendingIntent ile Deeplink oluşturma.  */
     }
 
     fun getNavControllerViaFragment1() {

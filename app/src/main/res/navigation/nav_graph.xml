@@ -29,11 +29,22 @@
             android:id="@+id/action_dashboardFragment_to_navGraphTransfer"
             app:destination="@id/nav_graph_transfer" />
     </fragment>
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.aliozdemir.appnavigation.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+
+        <argument
+            android:name="userId"
+            android:defaultValue="Default Value"
+            app:argType="string"
+            app:nullable="false" />
+
+        <deepLink app:uri="https://www.example.com/profile/{userId}" />
+    </fragment>
+
     <dialog
         android:id="@+id/settingsDialogFragment"
         android:name="com.aliozdemir.appnavigation.SettingsDialogFragment"
@@ -60,15 +71,24 @@
             android:label="fragment_payment"
             tools:layout="@layout/fragment_payment">
             <action
-                android:id="@+id/action_paymentFragment_to_placeholder"
-                app:destination="@id/placeholder" />
+                android:id="@+id/action_paymentFragment_to_confirmationFragment"
+                app:destination="@id/confirmationFragment" />
         </fragment>
-        <fragment android:id="@+id/placeholder">
-            <action
-                android:id="@+id/action_placeholder_to_placeholder2"
-                app:destination="@id/placeholder2" />
+
+        <fragment
+            android:id="@+id/confirmationFragment"
+            android:name="com.aliozdemir.appnavigation.ConfirmationFragment"
+            android:label="fragment_confirmation"
+            tools:layout="@layout/fragment_confirmation">
+
+            <argument
+                android:name="userId"
+                android:defaultValue="Default Value"
+                app:argType="string"
+                app:nullable="false" />
+
+            <deepLink app:uri="https://www.example.com/confirmation/{userId}" />
         </fragment>
-        <fragment android:id="@+id/placeholder2" />
 
     </navigation>
 

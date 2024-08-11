@@ -1,5 +1,6 @@
 package com.aliozdemir.appnavigation
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,8 +29,15 @@ class DashboardFragment : Fragment() {
         val btnOpenPaymentFragment = view.findViewById<Button>(R.id.btnOpenPaymentFragment)
         val btnOpenTransferFragment = view.findViewById<Button>(R.id.btnOpenTransferFragment)
 
+        val btnOpenConfirmationFragment = view.findViewById<Button>(R.id.btnOpenConfirmationFragment)
+        val btnOpenCurrencyFragment = view.findViewById<Button>(R.id.btnOpenCurrencyFragment)
+
         btnOpenProfile.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboardFragment_to_profileFragment)
+            val userId = 123
+            val deepLinkUri = Uri.parse("https://www.example.com/profile/$userId")
+            findNavController().navigate(deepLinkUri)
+
+//            findNavController().navigate(R.id.action_dashboardFragment_to_profileFragment)
 //            findNavController().navigate(R.id.profileFragment)
         }
 
@@ -51,6 +59,18 @@ class DashboardFragment : Fragment() {
 
         btnOpenTransferFragment.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_navGraphTransfer)
+        }
+
+        btnOpenConfirmationFragment.setOnClickListener {
+            val userId = 123
+            val deepLinkUri = Uri.parse("https://www.example.com/confirmation/$userId")
+            findNavController().navigate(deepLinkUri)
+        }
+
+        btnOpenCurrencyFragment.setOnClickListener {
+            val userId = 123
+            val deepLinkUri = Uri.parse("https://www.example.com/currency/$userId")
+            findNavController().navigate(deepLinkUri)
         }
     }
 }

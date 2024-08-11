@@ -11,8 +11,23 @@
         android:label="fragment_transfer"
         tools:layout="@layout/fragment_transfer">
         <action
-            android:id="@+id/action_transferFragment_to_placeholder3"
-            app:destination="@id/placeholder3" />
+            android:id="@+id/action_transferFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment" />
     </fragment>
-    <fragment android:id="@+id/placeholder3" />
+
+    <fragment
+        android:id="@+id/currencyFragment"
+        android:name="com.aliozdemir.appnavigation.CurrencyFragment"
+        android:label="fragment_currency"
+        tools:layout="@layout/fragment_currency">
+
+        <argument
+            android:name="userId"
+            android:defaultValue="Default Value"
+            app:argType="string"
+            app:nullable="false" />
+
+        <deepLink app:uri="https://www.example.com/currency/{userId}"/>
+
+    </fragment>
 </navigation>
